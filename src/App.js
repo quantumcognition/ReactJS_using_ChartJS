@@ -8,6 +8,7 @@ class App extends Component {
   constructor(){
     super();
       this.state = {
+        thumbnails: [],
         chartData: {
         labels: ['Boston','Worcester','Springfield','Lowell','Cambridge','New Bedford'],
         
@@ -31,17 +32,37 @@ class App extends Component {
       }
   }
 
-  componentWillMount(){
-    this.getChartData();
+  
+   
     
-
-  }
+  componentDidMount(){
+   this.getChartData();
+   
+   console.log(this.state.content);
+ }
 
   getChartData(){
-    // this.setState = ({
-    //   chartData: 
-    // });
+    this.setState({
+      chartData:{
+        labels: ['Boston','Worcester','Springfield','Lowell','Cambridge','New Bedford'],
+        
+        datasets: [{
+          label:'Population',
+          
+          data:[
+            617593,
+            181045,
+            113123,
+            123124,
+            643212,
+            532112,
+          ],
 
+          backgroundColor: ['#2681dc','#000000','#22334e','#900C3F','#FF5733','#581845']
+
+        }]
+      }
+   })
   }
 
   render(){   
@@ -51,4 +72,6 @@ class App extends Component {
   }
 
 }
+
+
 export default App;
