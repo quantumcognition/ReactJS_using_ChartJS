@@ -8,7 +8,6 @@ class App extends Component {
   constructor(){
     super();
       this.state = {
-        thumbnails: [],
         chartData: {
         labels: ['Boston','Worcester','Springfield','Lowell','Cambridge','New Bedford'],
         
@@ -28,17 +27,11 @@ class App extends Component {
 
         }]
       }
-
-      }
+    }
   }
-
   
-   
-    
   componentDidMount(){
    this.getChartData();
-   
-   console.log(this.state.content);
  }
 
   getChartData(){
